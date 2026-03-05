@@ -1,0 +1,132 @@
+
+MISSIONARIES AND CANNIBALS PROBLEM
+SEARCH ALGORITHM COMPARISON
+
+Problem Statement
+-----------------
+Three missionaries and three cannibals are on the left bank of a river. They need to cross the river using a boat that can carry at most two people. The constraint is that cannibals should never outnumber missionaries on either bank, otherwise the missionaries will be eaten. The goal is to move all missionaries and cannibals safely to the right bank.
+
+Initial State:
+(3M, 3C, Boat Left)
+
+Goal State:
+(0M, 0C, Boat Right)
+
+Search Algorithms Used
+----------------------
+1. Breadth First Search (BFS)
+2. Depth First Search (DFS)
+3. Depth Limited Search (DLS)
+4. Iterative Deepening Depth First Search (IDDFS)
+5. Uniform Cost Search (UCS)
+
+
+Comparison of Algorithms
+------------------------
+
+Algorithm: Breadth First Search (BFS)
+Description:
+Explores the state space level by level and guarantees the shortest path to the goal.
+
+Time Complexity:
+O(b^d)
+
+Space Complexity:
+O(b^d)
+
+Advantages:
+- Complete
+- Optimal for equal step costs
+
+Disadvantages:
+- Requires large memory
+
+
+Algorithm: Depth First Search (DFS)
+Description:
+Explores the deepest nodes in the search tree before backtracking.
+
+Time Complexity:
+O(b^m)
+
+Space Complexity:
+O(b*m)
+
+Advantages:
+- Requires less memory
+- Simple implementation
+
+Disadvantages:
+- May get stuck in deep paths
+- Not guaranteed to find the optimal solution
+
+
+Algorithm: Depth Limited Search (DLS)
+Description:
+A variation of DFS where a maximum depth limit is imposed.
+
+Time Complexity:
+O(b^l)
+
+Space Complexity:
+O(b*l)
+
+Advantages:
+- Prevents infinite depth exploration
+
+Disadvantages:
+- May fail if the depth limit is smaller than the solution depth
+
+
+Algorithm: Iterative Deepening Depth First Search (IDDFS)
+Description:
+Combines the advantages of BFS and DFS by repeatedly applying DFS with increasing depth limits.
+
+Time Complexity:
+O(b^d)
+
+Space Complexity:
+O(b*d)
+
+Advantages:
+- Complete
+- Uses less memory than BFS
+
+Disadvantages:
+- Repeats exploration of nodes
+
+
+Algorithm: Uniform Cost Search (UCS)
+Description:
+Expands the node with the lowest path cost first.
+
+Time Complexity:
+O(b^d)
+
+Space Complexity:
+O(b^d)
+
+Advantages:
+- Finds optimal solution
+- Works with varying step costs
+
+Disadvantages:
+- Uses large memory
+- Slower when all costs are equal
+
+
+Overall Comparison Summary
+--------------------------
+
+Algorithm   | Complete | Optimal | Memory Usage | Speed
+-------------------------------------------------------
+BFS         | Yes      | Yes     | High         | Moderate
+DFS         | No       | No      | Low          | Fast
+DLS         | No       | No      | Low          | Fast
+IDDFS       | Yes      | Yes     | Moderate     | Good
+UCS         | Yes      | Yes     | High         | Moderate
+
+
+Conclusion
+----------
+For the Missionaries and Cannibals problem, BFS and IDDFS are generally preferred because they ensure that a valid solution is found. DFS and DLS are memory efficient but may not guarantee optimal solutions. UCS is optimal but consumes more memory when costs are uniform.
